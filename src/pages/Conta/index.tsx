@@ -35,7 +35,7 @@ import { useEffect, useState } from 'react';
 import { IUser } from "../../models/Account/IUser";
 
 function Conta() {
-  const API_URL = "http://localhost:5191/habits/user";
+  const API_URL = "https://posteer.azurewebsites.net/habits/user";
   var loggedUser: IUser = {
     email: "",
     userName: "",
