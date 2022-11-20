@@ -41,7 +41,7 @@ function useAuthProvider() {
   const [token, setToken] = useState("");
   const [isLogged, setLogged] = useState(false);
   const [registered, setRegistered] = useState(false);
-  const API_URL = "http://localhost:5191/habits/user";
+  const API_URL = "https://posteer.azurewebsites.net/habits/user";
 
   axios.interceptors.request.use((config) => {
     const token = localStorage.getItem("user");

@@ -4,7 +4,6 @@ import Interesses from './pages/Interesses';
 import Login from './pages/Login';
 import Conta from './pages/Conta';
 import { Container } from "react-bootstrap";
-import PrivateRoute from "./data/PrivateRoute";
 
 function App() {
   return (
