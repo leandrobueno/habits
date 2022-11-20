@@ -49,7 +49,7 @@ function Login() {
           </Column>
         </Content>
       ) : (
-        <Redirect to="tasks/list" />
+        <Redirect to="/interesses" />
       )}
     </Container>
   );

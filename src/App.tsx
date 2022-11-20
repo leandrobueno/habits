@@ -17,10 +17,9 @@ function App() {
             <Container>
               <Switch>
                 <Route path="/login" component={Login} />
-                <Route path="/" component={Login} />
-                <PrivateRoute path="/home" component={Home} />
-                <PrivateRoute path="/interesses" component={Interesses} />
-                <PrivateRoute path="/conta" component={Conta} />
+                <Route path="/home" component={Home} />
+                <Route path="/interesses" component={Interesses} />
+                <Route path="/conta" component={Conta} />
               </Switch>
             </Container>
           </>

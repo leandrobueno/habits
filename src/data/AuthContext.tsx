@@ -16,7 +16,7 @@ interface IAuthContext {
 }
 
 const defaultState: IAuthContext = {
-  user: { username: "", email: "", token: "" },
+  user: { userName: "", email: "", token: "" },
   isLogged: false,
   token: "",
   registered: false,
@@ -37,11 +37,11 @@ export const AuthProvider: FC<PropsWithChildren<Props>> = ({ children }) => {
 };
 
 function useAuthProvider() {
-  const [user, setUser] = useState<IUser>({ username: "", email: "", token: "" });
+  const [user, setUser] = useState<IUser>({ userName: "", email: "", token: "" });
   const [token, setToken] = useState("");
   const [isLogged, setLogged] = useState(false);
   const [registered, setRegistered] = useState(false);
-  const API_URL = "https://posteer.azurewebsites.net/habits/user";
+  const API_URL = "http://localhost:5191/habits/user";
 
   axios.interceptors.request.use((config) => {
     const token = localStorage.getItem("user");

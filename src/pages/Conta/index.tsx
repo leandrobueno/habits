@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   ColumnsContainer,
   Container,
@@ -30,8 +31,32 @@ import People from '../../assets/icons/people.svg';
 import Person from '../../assets/icons/person.svg';
 import Clock from '../../assets/icons/clock.svg';
 import Star from '../../assets/icons/star.svg';
+import { useEffect, useState } from 'react';
+import { IUser } from "../../models/Account/IUser";
 
 function Conta() {
+  const API_URL = "http://localhost:5191/habits/user";
+  var loggedUser: IUser = {
+    email: "",
+    userName: "",
+    token: ""
+  };
+
+  const [user, setUser] = useState(loggedUser);
+
+  useEffect(() => {
+    const localToken = localStorage.getItem("user");
+    if (localToken) {
+      JSON.parse(localToken);
+      axios.get(API_URL).then(function (r) {
+        setUser(r.data);
+      });
+    }
+  }, [])
+
+  console.log(user);
+
+
   return (
     <Container>
       <Nav>
@@ -58,7 +83,7 @@ function Conta() {
         <RightColumn>
           <Employee>
             <Image src={Funcionaria} />
-            <h2 className="nome">Nome Funcionário</h2>
+            <h2 className="nome">Olá, {user.userName}</h2>
           </Employee>
           <ImagesContainer>
             <Card>

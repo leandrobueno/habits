@@ -29,7 +29,7 @@ function Interesses() {
           <button className='viagem'>Viagem</button>
         </BallsContainer>
         <ButtonContainer>
-            <a href="/home">Próximo</a>
+          <a href="/home">Próximo</a>
         </ButtonContainer>
       </Content>
     </Container>
