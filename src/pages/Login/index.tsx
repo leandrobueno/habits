@@ -8,15 +8,14 @@ import { Color, Column, Container, Content, FormContainer } from './styles';
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+
   const { login, isLogged } = useContext(AuthContext);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     var user: IUserLogin = {
       email: email,
-      password: password,
-      rememberMe: rememberMe,
+      password: password
     };
 
     login(user);
